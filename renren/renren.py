@@ -1,3 +1,4 @@
+#-*-coding:utf-8-*-
 import requests
 import json
 import re
@@ -5,6 +6,7 @@ import random
 from encrypt import encryptString
 import os
 import urllib2
+import chardet
 
 
 class RenRen:
@@ -162,14 +164,15 @@ class RenRen:
 
 if __name__ == '__main__':
     renren = RenRen()
-    renren.login('654428746@qq.com', 'lina368520')
+    renren.login('654428746@qq.com', '******')
     info = renren.getUserInfo()
     noti = renren.getNotifications()
     print 'hello', info['hostname']
 
-    owner_id = '422703493'#gejigeji
-    #owner_id = '301426360'#piaobidao
+    #owner_id = '422703493'#gejigeji
+    owner_id = '301426360'#piaobidao
     #owner_id = '308574541'#lina
+    #owner_id = '249937446'
     doings = renren.getDoings(owner_id)
 
     for i in range(len(doings)):
